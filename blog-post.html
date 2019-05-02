@@ -39,7 +39,7 @@
 					<div class="container">
 						<!-- logo -->
 						<div class="nav-logo">
-							<a href="index.php" class="logo"><img src="./img/logo.png" alt=""></a>
+							<a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a>
 						</div>
 						<!-- /logo -->
 
@@ -73,7 +73,7 @@
 					<!-- nav -->
 					<div class="section-row">
 						<ul class="nav-aside-menu">
-							<li><a href="index.php">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About Us</a></li>
 							<li><a href="#">Join Us</a></li>
 							<li><a href="#">Advertisement</a></li>
@@ -216,30 +216,6 @@
 						</div>
 						<!-- /author -->
 
-
-						<?php 
-						mysql_connect('localhost', 'root', '');
-						mysql_select_db('BlogDB');
-
-						if(isset($_POST['submit'])) {
-							$name = $_POST['name'];
-							$email = $_POST['email'];
-							$website = $_POST['website'];
-							$message = $_POST['message'];
-							date_default_timezone_set('Europe/Kiev');
-							$date = date('m/d/Y h:i:s a', time());
-
-							$insert = "INSERT INTO Comments(Name, Email, Website, Message, Date) VALUES('$name', '$email', '$website', '$message', '$date')";
-							mysql_query($insert);
-						}
-						
-						$select = "SELECT * FROM Comments";
-						$resource = mysql_query($select);
-
-						?>
-
-
-
 						<!-- comments -->
 						<div class="section-row">
 							<div class="section-title">
@@ -248,35 +224,63 @@
 
 							<div class="post-comments">
 								<!-- comment -->
-								<?php while($row = mysql_fetch_array($resource)):?>
-
 								<div class="media">
 									<div class="media-left">
 										<img class="media-object" src="./img/avatar.png" alt="">
 									</div>
 									<div class="media-body">
 										<div class="media-heading">
-											<h4><?php echo $row['Name']?></h4>
-											<span class="time"><?php echo $row['Date']?></span>
+											<h4>John Doe</h4>
+											<span class="time">March 27, 2018 at 8:00 am</span>
 											<a href="#" class="reply">Reply</a>
 										</div>
-										<p><?php echo $row['Message']?></p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+										<!-- comment -->
+										<div class="media">
+											<div class="media-left">
+												<img class="media-object" src="./img/avatar.png" alt="">
+											</div>
+											<div class="media-body">
+												<div class="media-heading">
+													<h4>John Doe</h4>
+													<span class="time">March 27, 2018 at 8:00 am</span>
+													<a href="#" class="reply">Reply</a>
+												</div>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+											</div>
+										</div>
+										<!-- /comment -->
 									</div>
 								</div>
-								<?php endwhile;?>
+								<!-- /comment -->
+
+								<!-- comment -->
+								<div class="media">
+									<div class="media-left">
+										<img class="media-object" src="./img/avatar.png" alt="">
+									</div>
+									<div class="media-body">
+										<div class="media-heading">
+											<h4>John Doe</h4>
+											<span class="time">March 27, 2018 at 8:00 am</span>
+											<a href="#" class="reply">Reply</a>
+										</div>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									</div>
+								</div>
 								<!-- /comment -->
 							</div>
 						</div>
 						<!-- /comments -->
 
 						<!-- reply -->
-
 						<div class="section-row">
 							<div class="section-title">
 								<h2>Leave a reply</h2>
 								<p>your email address will not be published. required fields are marked *</p>
 							</div>
-							<form class="post-reply" method="post">
+							<form class="post-reply">
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
@@ -300,7 +304,7 @@
 										<div class="form-group">
 											<textarea class="input" name="message" placeholder="Message"></textarea>
 										</div>
-										<button class="primary-button" name="submit">Submit</button>
+										<button class="primary-button">Submit</button>
 									</div>
 								</div>
 							</form>
@@ -450,7 +454,7 @@
 					<div class="col-md-5">
 						<div class="footer-widget">
 							<div class="footer-logo">
-								<a href="index.php" class="logo"><img src="./img/logo.png" alt=""></a>
+								<a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a>
 							</div>
 							<ul class="footer-nav">
 								<li><a href="#">Privacy Policy</a></li>
